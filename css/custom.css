@@ -6,10 +6,11 @@
 @font-face{font-family: Roboto-thin; src: url(../fonts/AP_Roboto_43/Roboto-Thin.ttf) format('truetype')}
 body{color:#287AA9;}
 th{font-family:RobotoCondensed-regular;}
-td{font-family:Roboto-regular; font-size:15px;}
+
 .jumbotron{size:portrait;}
 .jumbotron h1{font-family:Roboto-bold; font-size:65px;}
 #content a{font-family:RobotoCondensed-regular; font-size:25px;}
+td, #catEnt a{font-family:Roboto-regular; font-size:15px;}
 #menu a{font-family:Roboto-thin; font-size:50px;}
 #content h3{font-family:RobotoCondensed-bold;}
 .panel-default{border-color:#287AA9;}
