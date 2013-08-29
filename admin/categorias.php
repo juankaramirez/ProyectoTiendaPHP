@@ -11,11 +11,6 @@ if (isset($_POST["enviar"])) {
             $db->adicionarCategoria($cat_temp);
        }
 }
-//var_dump($_POST);
-
-/*if(isset($_POST['categoria']) && $_POST['categoria']!=""){
-    var_dump($_POST['categoria']);
-}*/
 ?>
 <!DOCTYPE htmls>
 <html>
