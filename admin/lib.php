@@ -1,4 +1,37 @@
 <?php
+            /*---$conn = new PDO('sqlite:../db/StoreSchema.sqlite');
+            $sql = 'SELECT * FROM admin';
+            
+            print "<table class=\"table\" <thead><tr><th>adminId</th><th>username</th></tr></thead><tbody";
+            foreach ($conn->query($sql) as $row){
+                print "<tr><td>".$row['adminId']."</td><td>".$row['username']."</td></tr>";
+            }
+            
+            print "</tbody></table>";
+            
+            /*$sql = 'SELECT * FROM cliente';
+                    
+            foreach ($conn->query($sql) as $row){
+                print $row['clienteNom']." ".$row['clienteAp']."<br>";
+            }
+            
+            print "<br>";*/
+            
+            /*----$sql = 'SELECT * FROM factura';
+                    
+            foreach ($conn->query($sql) as $row){
+                print $row['clienteId']." ".$row['total']."<br>";
+            }
+            
+            print "<br>";
+            
+            /*$sql = 'SELECT * FROM cliente WHERE clienteDir = :cliented';
+            $cons = $conn->prepare($sql);
+            $cons->execute(array(':cliented' => "Narnia"));
+            $res = $cons->fetchAll();
+            foreach ($res as $row){
+                echo "Nombre: ".$row["clienteNom"]." ".$row["clienteAp"].'<br>';
+            }*/
 class producto {
 
     var $id = 0;
