@@ -13,7 +13,6 @@
                 <div class="panel-body">
                     <div class="jumbotron">
                         <h1>Registro</h1>
-                        <!--<p class="help-block">Enter your info and log in.</p>-->
                     </div>
 
                     <div class="container" id="content">
