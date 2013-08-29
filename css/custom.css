@@ -1,0 +1,18 @@
+@font-face{font-family: Roboto-bold; src: url(../fonts/AP_Roboto_43/Roboto-Bold.ttf) format('truetype')}
+@font-face{font-family: RobotoCondensed-bold; src: url(../fonts/AP_Roboto_43/RobotoCondensed-Bold.ttf) format('truetype')}
+@font-face{font-family: Roboto-light; src: url(../fonts/AP_Roboto_43/Roboto-Light.ttf) format('truetype')}
+@font-face{font-family: Roboto-regular; src: url(../fonts/AP_Roboto_43/Roboto-Regular.ttf) format('truetype')}
+@font-face{font-family: RobotoCondensed-regular; src: url(../fonts/AP_Roboto_43/RobotoCondensed-Regular.ttf) format('truetype')}
+@font-face{font-family: Roboto-thin; src: url(../fonts/AP_Roboto_43/Roboto-Thin.ttf) format('truetype')}
+body{color:#287AA9;}
+th{font-family:RobotoCondensed-regular;}
+td{font-family:Roboto-regular; font-size:15px;}
+.jumbotron{size:portrait;}
+.jumbotron h1{font-family:Roboto-bold; font-size:65px;}
+#content a{font-family:RobotoCondensed-regular; font-size:25px;}
+#menu a{font-family:Roboto-thin; font-size:50px;}
+#content h3{font-family:RobotoCondensed-bold;}
+.panel-default{border-color:#287AA9;}
+.form-group label{ font-weight:normal; font-family:RobotoCondensed-regular; font-size:20px;}
+.form-group input{font-family:Roboto-light; font-size:15px;}
+form input{font-family:RobotoCondensed-regular; font-size:25px;}
