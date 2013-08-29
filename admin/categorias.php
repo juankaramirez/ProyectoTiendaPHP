@@ -46,7 +46,26 @@ if (isset($_POST["enviar"])) {
                                     <li><a id="catEliminar" href="#">Eliminar</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4" id="catEnt"></div>
+                            <div class="col-md-4" id="catEnt">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        foreach ($db->obtenerTodoCategoria() as $value) {
+                                            echo "<tr>
+                                            <td>{$value->nombre}</td>
+                                            <td><a href='#'>Eliminar</a></td>
+                                            </tr>";
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                             <div class="col-md-5">
                                 <h3>Categorias existentes</h3>
                                 <table class="table">
