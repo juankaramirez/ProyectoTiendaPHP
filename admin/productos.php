@@ -6,7 +6,6 @@ if (isset($_POST["enviar"])) {
         //Para no guardar nombres vacios en la BD
        if (!$_POST["nombre"] == "" && !$_POST["idcategoria"] == "" &&
            !$_POST["codigo"] == "" && !$_POST["precio"] == "" && !$_POST["existencias"] == "") {
-           echo "sas";
                 
                 $prod_temp = new producto(0, 0, "", 0, 0, 0);
                 $prod_temp->nombre = $_POST["nombre"];
@@ -44,7 +43,7 @@ if (isset($_POST["enviar"])) {
                         <ul class="nav nav-pills" id="menu">
                             <li><a href="categorias.php">Categor&iacute;as</a></li>
                             <li class="active"><a href="productos.php">Productos</a></li>
-                            <li><a href="index.php">Atr&aacute;s</a></li>
+                            <li><a href="../index.php">Atr&aacute;s</a></li>
                         </ul>
                         <br>
 
