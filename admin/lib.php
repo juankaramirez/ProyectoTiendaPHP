@@ -44,7 +44,6 @@ class database {
         $cond = false;
         foreach($this->conn->query($sql) as $key => $row){
             if($row['catNom'] == $nombre){
-                echo "epa";
                 $cond = true;
             }
         }
