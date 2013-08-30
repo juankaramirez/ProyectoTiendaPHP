@@ -5,7 +5,6 @@ if (isset($_POST["enviar"])) {
         //Para no guardar nombres vacios en la BD
     
        if (!$_POST["categoria"]=="" && !$db->existeCategoria($_POST["categoria"])) {
-           echo "si";
             $cat_temp = new categoria(0, "");
             $cat_temp->nombre = $_POST["categoria"];
             $db->adicionarCategoria($cat_temp);
@@ -34,7 +33,7 @@ if (isset($_POST["enviar"])) {
                         <ul class="nav nav-pills" id="menu">
                             <li class="active"><a href="categorias.php">Categor&iacute;as</a></li>
                             <li><a href="productos.php">Productos</a></li>
-                            <li><a href="index.php">Atr&aacute;s</a></li>
+                            <li><a href="../index.php">Atr&aacute;s</a></li>
                         </ul>
                         <br>
                         
