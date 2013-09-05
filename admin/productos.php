@@ -3,9 +3,8 @@ include_once 'lib.php';
 
 if (isset($_POST["enviar"])) {
     
-        //Para no guardar nombres vacios en la BD
        if (!$_POST["nombre"] == "" && !$_POST["idcategoria"] == "" &&
-           !$_POST["codigo"] == "" && !$_POST["precio"] == "" && !$_POST["existencias"] == "") {
+           !$_POST["codigo"] == "" && !$_POST["precio"] == "" && !$_POST["existencias"] == "" && !$db->existeProducto($_POST["nombre"])) {
                 
                 $prod_temp = new producto(0, 0, "", 0, 0, 0);
                 $prod_temp->nombre = $_POST["nombre"];
@@ -13,9 +12,58 @@ if (isset($_POST["enviar"])) {
                 $prod_temp->codigo = $_POST["codigo"];
                 $prod_temp->precio = $_POST["precio"];
                 $prod_temp->existencias = $_POST["existencias"];
-                echo $prod_temp->nombre;
                 $db->adicionarProducto($prod_temp);
+    } elseif ($db->existeProducto($_POST["nombre"])){
+           echo '<script type="text/javascript"> alert("El nombre del producto ingresado ya existe en la base de datos");</script>';
+       } else {
+           echo '<script type="text/javascript"> alert("Hay algun(os) campo(s) en blanco");</script>';
+       }
+}
+
+if (isset($_POST["editar"])) {
+
+    if ($db->existeProducto($_POST["idProd"]) && !$_POST["idProd"] == "" && (!$_POST["nombre"] == "" || !$_POST["idcategoria"] == "" ||
+            !$_POST["codigo"] == "" || !$_POST["precio"] == "" || !$_POST["existencias"] == "")) {
+
+        if (!$_POST["idcategoria"] == "") {
+            if ($db->existeCategoria($_POST["idcategoria"])) {
+                $prod_temp = new producto($_POST["idProd"], $_POST["idcategoria"], $_POST["nombre"], $_POST["codigo"], $_POST["precio"], $_POST["existencias"]);
+                $db->editarProducto($prod_temp);
+            } else {
+                echo '<script type="text/javascript"> alert("La categoría ingresada no está en la base de datos");</script>';
+            }
+        } else {
+
+            $prod_temp = new producto($_POST["idProd"], $_POST["idcategoria"], $_POST["nombre"], $_POST["codigo"], $_POST["precio"], $_POST["existencias"]);
+            $db->editarProducto($prod_temp);
+        }
+        
+    
+    } else if ($_POST["idProd"] == "") {
+
+        echo '<script type="text/javascript"> alert("El campo Id Producto no puede estar en blanco");</script>';
+        
+    } else if (!$db->existeProducto($_POST["idProd"])) {
+
+        echo '<script type="text/javascript"> alert("El producto ingresado no está en la base de datos");</script>';
+    
+    } else {
+
+        echo '<script type="text/javascript"> alert("Todos los campos están en blanco");</script>';
     }
+}
+
+if (isset($_POST["eliminar"])) {
+      
+       if (!$_POST["idProd"]=="") {
+            $prod_temp = $_POST["idProd"];
+            $db->eliminarProducto($prod_temp);
+            
+       }elseif ($_POST["idProd"]==""){
+           echo '<script type="text/javascript"> alert("El campo está en blanco");</script>';
+       } else {
+           echo '<script type="text/javascript"> alert("El producto ingresado no está en la base de datos");</script>';
+       }
 }
 ?>
 
@@ -26,7 +74,7 @@ if (isset($_POST["enviar"])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="../css/custom.css" rel="stylesheet" media="screen">
-        <title>Info</title>
+        <title>Backend</title>
     </head>
     <body>
         <div class="container">
@@ -55,7 +103,7 @@ if (isset($_POST["enviar"])) {
                                     <li><a id="prodEliminar" href="#">Eliminar</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4" id="prodEnt"></div>
+                            <div id="prodFunc"></div>
                             <div class="col-md-5">
                                 <h3>Productos existentes</h3>
                                 <table class="table">
