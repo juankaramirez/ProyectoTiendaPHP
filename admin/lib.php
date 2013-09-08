@@ -112,11 +112,9 @@ class database {
         $sql = "INSERT INTO producto (catId,prodNom,prodCodigo,prodPrecio,prodExist)
                VALUES(:catId,:nombre,:codigo,:precio,:existencias)";
         $res = $this->conn->prepare($sql);
-        $tmp = array("catId" => $producto->catId, "nombre" => $producto->nombre,
+        $res->execute(array("catId" => $producto->catId, "nombre" => $producto->nombre,
                             "codigo" => $producto->codigo, "precio" => $producto->precio,
-                            "existencias" => $producto->existencias);
-                        print_r($tmp);
-        $res->execute($tmp);
+                            "existencias" => $producto->existencias));
     }
     
     function editarProducto(producto $producto) {
@@ -143,8 +141,6 @@ class database {
             $tmp["existencias"] = $producto->existencias;
         }
         $queryatt = rtrim($queryatt,",");
-        print_r($tmp);
-        echo " ".$queryatt;
         $sql = "UPDATE producto SET {$queryatt} WHERE prodId = :id";
         $res = $this->conn->prepare($sql);
         $res->execute($tmp);
