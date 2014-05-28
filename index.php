@@ -12,13 +12,12 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="jumbotron">
-                        <h1>Acceso Backend</h1>
-                        <!--<p class="help-block">Enter your info and log in.</p>-->
+                        <h1>Acceso Mini Tienda Online</h1>
                     </div>
                     <div class="container" id="content">
                         <ul class="nav nav-pills" id="menu">
-                            <li><a href="admin/index.php">Administrador</a></li>
-                            <!--<li><a href="users/index.php">Usuario</a></li>-->
+                            <li><a href="adminlogin.php">Administrador</a></li>
+                            <li><a href="users/index.php">Usuario</a></li>
                         </ul>
                     </div>
                 </div>

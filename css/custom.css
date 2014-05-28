@@ -11,9 +11,15 @@ th{font-family:RobotoCondensed-regular;}
 .jumbotron h1{font-family:Roboto-bold; font-size:65px;}
 #content a{font-family:RobotoCondensed-regular; font-size:25px;}
 td, #catEnt a{font-family:Roboto-regular; font-size:15px;}
-#menu a{font-family:Roboto-thin; font-size:50px;}
 #content h3{font-family:RobotoCondensed-bold;}
+#menu a{font-family:Roboto-thin; font-size:50px;}
 .panel-default{border-color:#287AA9;}
 .form-group label{ font-weight:normal; font-family:RobotoCondensed-regular; font-size:20px;}
-.form-group input{font-family:Roboto-light; font-size:15px;}
+.form-group input{font-family:Roboto-light; font-size:17px;}
 form input{font-family:RobotoCondensed-regular; font-size:25px;}
+.modal-title {font-family:RobotoCondensed-bold; font-size: 50px;}
+.modal-body h3 h2{font-family:Roboto-light; font-size: 50px;}
+#img{
+    font-family:RobotoCondensed-regular;  font-size: 14px;
+}
+
