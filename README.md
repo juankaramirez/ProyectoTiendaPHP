@@ -1,5 +1,8 @@
 ProyectoTiendaPHP
 =================
 
-Tienda online usando PHP y demás herramientas.
-Proyecto para entrega en Diseño de Ambientes Web III.
+First project using PHP (for real).
+
+ - Sql structure in "db" folder, file called "EsquemaTienda.sqlite".
+
+Powered by Twitter Bootstrap: http://getbootstrap.com/
